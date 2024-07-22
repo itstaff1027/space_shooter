@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://c65oob8kdb0ik"]
+
+[ext_resource type="Texture2D" uid="uid://cpvenbi0rvxnq" path="res://graphics/life.png" id="1_xj6bf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbebj"]
+atlas = ExtResource("1_xj6bf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46jsh"]
+atlas = ExtResource("1_xj6bf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jibv"]
+atlas = ExtResource("1_xj6bf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k60ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbebj")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46jsh")
+}],
+"loop": true,
+"name": &"FULL HEALTH",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jibv")
+}],
+"loop": true,
+"name": &"LAST",
+"speed": 10.0
+}]
+
+[node name="Life" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_k60ft")
+animation = &"LAST"
+frame_progress = 0.890337
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://graphics",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/life.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "dda35b279a97c5652b294a92c64b79d9"

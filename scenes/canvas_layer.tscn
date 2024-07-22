@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://ihmvxwm2oxi3"]
+
+[ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="1_a2aun"]
+[ext_resource type="Texture2D" uid="uid://gu0kk2qm2n00" path="res://graphics/spaceship.png" id="1_kqrg0"]
+
+[node name="CanvasLayer" type="CanvasLayer" groups=["ui"]]
+script = ExtResource("1_a2aun")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_right = 41.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 10
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 392.0
+offset_bottom = 128.0
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_kqrg0")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_kqrg0")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_kqrg0")
+stretch_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://qifjg54k0pnf"]
+
+[ext_resource type="Texture2D" uid="uid://ces1ab1d2rghm" path="res://graphics/ASTEROID_!.png" id="1_4g8jd"]
+[ext_resource type="Script" path="res://scenes/meteors_1.gd" id="1_h24va"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gb3jd"]
+radius = 22.3607
+
+[node name="Meteors_1" type="Area2D"]
+script = ExtResource("1_h24va")
+
+[node name="Meteor_1" type="Sprite2D" parent="."]
+texture = ExtResource("1_4g8jd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gb3jd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

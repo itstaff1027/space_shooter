@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c6e36vg0yjuvy"
+path="res://.godot/imported/Stars.aseprite-ec96ea9772db568648f30712444e348a.res"
+
+[deps]
+
+source_file="res://graphics/Stars.aseprite"
+dest_files=["res://.godot/imported/Stars.aseprite-ec96ea9772db568648f30712444e348a.res"]
+
+[params]
+

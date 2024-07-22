@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6pvs4cychd40"]
+
+[ext_resource type="Texture2D" uid="uid://gu0kk2qm2n00" path="res://graphics/spaceship.png" id="1_8atal"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_68h4i"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_68h4i")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_8atal")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -64, 31, 13, 47, -22, 59, -10, 53, 1, 63, 35, 23, 54, -23, 54, -64, 36, -53, 2, -60, -10, -48, -21, -32, 13)
+
+[node name="PewStart" type="Marker2D" parent="."]
+position = Vector2(0, -75)
+gizmo_extents = 114.0
+
+[node name="PewTimer" type="Timer" parent="."]
+wait_time = 0.212
+one_shot = true
+
+[connection signal="timeout" from="PewTimer" to="." method="_on_pew_timer_timeout"]

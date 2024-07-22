@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://6i25xwabd3mw"]
+
+[ext_resource type="Texture2D" uid="uid://b7nvw4jra8bin" path="res://graphics/BACKGROUND.png" id="1_wm12k"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_xy15c"]
+[ext_resource type="PackedScene" uid="uid://b6pvs4cychd40" path="res://scenes/player.tscn" id="2_cuff3"]
+[ext_resource type="PackedScene" uid="uid://qifjg54k0pnf" path="res://scenes/meteors_1.tscn" id="3_opurd"]
+[ext_resource type="PackedScene" uid="uid://byp8yctj5yrmo" path="res://scenes/blinking_stars.tscn" id="5_g7kgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3obb"]
+size = Vector2(0.57, 6.505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2etyv"]
+size = Vector2(12.71, 0.78)
+
+[node name="Level" type="Node2D"]
+visibility_layer = 2
+script = ExtResource("1_xy15c")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(579, 324)
+scale = Vector2(0.64566, 0.66331)
+texture = ExtResource("1_wm12k")
+
+[node name="Player" parent="." instance=ExtResource("2_cuff3")]
+position = Vector2(549, 397)
+
+[node name="Meteors_1" parent="." instance=ExtResource("3_opurd")]
+position = Vector2(220, 199)
+collision_mask = 2
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(1180, 323.75)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_a3obb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(-29, 323.75)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_a3obb")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
+position = Vector2(575.5, -38)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_2etyv")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4"]
+position = Vector2(576.5, 688)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_2etyv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.445
+autostart = true
+
+[node name="metoers" type="Node2D" parent="."]
+
+[node name="Pew" type="Node2D" parent="."]
+
+[node name="Stars" parent="." instance=ExtResource("5_g7kgf")]
+position = Vector2(109, 94)
+
+[connection signal="pew" from="Player" to="." method="_on_player_pew"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

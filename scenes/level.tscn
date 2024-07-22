@@ -1,0 +1,569 @@
+[gd_scene load_steps=17 format=3 uid="uid://6i25xwabd3mw"]
+
+[ext_resource type="Texture2D" uid="uid://b7nvw4jra8bin" path="res://graphics/BACKGROUND.png" id="1_wm12k"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_xy15c"]
+[ext_resource type="PackedScene" uid="uid://b6pvs4cychd40" path="res://scenes/player.tscn" id="2_cuff3"]
+[ext_resource type="PackedScene" uid="uid://qifjg54k0pnf" path="res://scenes/meteors_1.tscn" id="3_opurd"]
+[ext_resource type="Texture2D" uid="uid://dbx8tsd86eeql" path="res://scenes/blinking_starsLayer 2.png" id="4_p8xkd"]
+[ext_resource type="Script" path="res://scenes/AnimatedSprite2D.gd" id="5_ndbdk"]
+[ext_resource type="PackedScene" uid="uid://ihmvxwm2oxi3" path="res://scenes/canvas_layer.tscn" id="7_reskk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dngk"]
+atlas = ExtResource("4_p8xkd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tampj"]
+atlas = ExtResource("4_p8xkd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu600"]
+atlas = ExtResource("4_p8xkd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ygmq"]
+atlas = ExtResource("4_p8xkd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7e3x"]
+atlas = ExtResource("4_p8xkd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlxfj"]
+atlas = ExtResource("4_p8xkd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_525gk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dngk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tampj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu600")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ygmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7e3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlxfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7e3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ygmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu600")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tampj")
+}],
+"loop": true,
+"name": &"Loop",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3obb"]
+size = Vector2(0.57, 6.505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2etyv"]
+size = Vector2(12.71, 0.78)
+
+[node name="Level" type="Node2D"]
+visibility_layer = 2
+script = ExtResource("1_xy15c")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(579, 324)
+scale = Vector2(0.64566, 0.66331)
+texture = ExtResource("1_wm12k")
+metadata/_edit_lock_ = true
+
+[node name="Stars_Blinking" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="blinking_stars" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars2" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars3" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars4" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars5" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars6" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars7" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars8" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars9" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars10" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars11" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars12" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars13" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars14" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars15" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars16" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars17" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars18" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars19" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="blinking_stars20" type="AnimatedSprite2D" parent="Stars_Blinking"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_525gk")
+animation = &"Loop"
+script = ExtResource("5_ndbdk")
+metadata/_aseprite_wizard_config_ = {
+"layer": "Layer 2",
+"o_ex_p": "",
+"o_folder": "res://scenes",
+"o_name": "blinking_stars",
+"only_visible": false,
+"slice": "",
+"source": "res://graphics/Stars.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4e0e3b67bc07632b2247a208fed8497e"
+
+[node name="Player" parent="." instance=ExtResource("2_cuff3")]
+position = Vector2(549, 397)
+metadata/_edit_lock_ = true
+
+[node name="Meteors_1" parent="." instance=ExtResource("3_opurd")]
+position = Vector2(220, 199)
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Borders" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(1180, 323.75)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_a3obb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(-29, 323.75)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_a3obb")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
+position = Vector2(575.5, -38)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_2etyv")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4"]
+position = Vector2(576.5, 688)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_2etyv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.445
+autostart = true
+
+[node name="metoers" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Pew" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_reskk")]
+
+[connection signal="pew" from="Player" to="." method="_on_player_pew"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

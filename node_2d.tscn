@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxo3y8dryer55"]
+
+[ext_resource type="Texture2D" uid="uid://gu0kk2qm2n00" path="res://graphics/spaceship.png" id="1_sp7nd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_sp7nd")
